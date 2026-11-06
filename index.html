@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloom | Cycle & Ovulation Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo-area">
+        <i class="fa-solid fa-droplet logo-icon"></i>
+        <div>
+          <h1>Bloom Cycle Tracker</h1>
+          <p>Private & Personalized Period & Ovulation Care</p>
+        </div>
+      </div>
+      <div class="privacy-badge"><i class="fa-solid fa-lock"></i> 100% On-Device & Private</div>
+    </header>
+
+    <!-- Main Dashboard Counter -->
+    <section class="card hero-status">
+      <div class="status-ring">
+        <div class="ring-content">
+          <span class="day-number" id="current-cycle-day">--</span>
+          <span class="day-label">Cycle Day</span>
+        </div>
+      </div>
+      <div class="status-details">
+        <h2 id="next-period-countdown">Set your cycle data to begin</h2>
+        <p id="fertile-window-text">Fertile window prediction will appear here.</p>
+      </div>
+    </section>
+
+    <!-- Settings & Input Form -->
+    <section class="card">
+      <h2><i class="fa-solid fa-sliders"></i> Log Period Settings</h2>
+      <form id="cycle-form" class="form-grid">
+        <div class="input-group">
+          <label for="last-period-date">Start Date of Last Period</label>
+          <input type="date" id="last-period-date" required>
+        </div>
+        <div class="input-group">
+          <label for="cycle-length">Average Cycle Length (Days)</label>
+          <input type="number" id="cycle-length" value="28" min="20" max="45" required>
+        </div>
+        <div class="input-group">
+          <label for="period-duration">Period Duration (Days)</label>
+          <input type="number" id="period-duration" value="5" min="2" max="10" required>
+        </div>
+        <button type="submit" class="btn btn-gold"><i class="fa-solid fa-floppy-disk"></i> Save & Recalculate</button>
+      </form>
+    </section>
+
+    <!-- Daily Symptom Tracker -->
+    <section class="card">
+      <h2><i class="fa-solid fa-heart-pulse"></i> Daily Symptom Check-In</h2>
+      <p class="section-desc">Tap symptoms experienced today:</p>
+      <div class="symptom-chips" id="symptom-chips">
+        <button class="chip" data-symptom="Cramps">🩸 Cramps</button>
+        <button class="chip" data-symptom="Bloating">🎈 Bloating</button>
+        <button class="chip" data-symptom="Fatigue">😴 Fatigue</button>
+        <button class="chip" data-symptom="Headache">🤕 Headache</button>
+        <button class="chip" data-symptom="Mood Swings">🎭 Mood Swings</button>
+        <button class="chip" data-symptom="Clear Skin">✨ Clear Skin</button>
+      </div>
+    </section>
+
+    <!-- Cycle History Log -->
+    <section class="card">
+      <div class="flex-between">
+        <h2><i class="fa-solid fa-calendar-days"></i> Period History</h2>
+        <button class="btn btn-outline" id="clear-data-btn"><i class="fa-solid fa-trash"></i> Reset Data</button>
+      </div>
+      <ul id="history-list" class="history-list"></ul>
+    </section>
+
+    <footer class="footer">
+      <p>Bloom Cycle Tracker | Local Browser Storage Enabled</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
